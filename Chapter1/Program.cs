@@ -18,7 +18,7 @@ namespace Chapter1
 
         private static void PrintContacts()
         {
-	        var employees = Employee.GetEmployees();
+	        var employees = Employee.GetEmployeesArrayList();
 	        var contacts =
 		        employees
 			        .Cast<Employee>()
