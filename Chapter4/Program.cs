@@ -38,28 +38,15 @@ namespace Chapter4
 
         static void Main(string[] args)
         {
-	        UseDefaultIfEmpty();
+	        Samples();
         }
 
         private static void Samples()
-		{
-			var employees = Employee.GetEmployeesArray();
-			var empOptions = EmployeeOptionEntry.GetEmployeeOptionEntries();
+        {
+	        var empty = Enumerable.Empty<string>();
 
-			var employeeOptions = empOptions
-				.Join(employees,
-					e => e.Id,
-					o => o.Id,
-					(e, o) => new
-					{
-						Id = e.Id,
-						Name = string.Format($"{o.FirstName} {o.SecondName}"),
-						Options = e.OptionsCount
-					});
-
-			foreach (var item in employeeOptions)
-				Console.WriteLine(item);
-		}
+	        Console.WriteLine(empty.Count());
+        }
 
         private static void UseDefaultIfEmpty()
         {
